@@ -1,15 +1,12 @@
-variable "image_id" {
-  type    = string
-  default = "debian-10-tf-2-2-1-v20201005 "
+variable "vm_size" {
+  type    = number
+  default = 10
 }
 
 variable "region" {
   type    = string
   default = "us-central1"
 }
-
-variable "project" {
-  type = string
 
 variable "vm_count" {
   type = number
