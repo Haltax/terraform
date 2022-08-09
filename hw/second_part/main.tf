@@ -8,7 +8,7 @@ terraform {
 
 resource "google_compute_instance" "default" {
         count        = "${var.vm_count}"
-        name         = "${var.instance_name}-${count.index}"
+        name         = "terra-zadanie-${count.index"
         machine_type = "e2-medium"
         zone         = "${var.region}"
 
@@ -20,11 +20,10 @@ resource "google_compute_instance" "default" {
         }
         network_interface {
                 network = "default"
-
-                acces_config {
-
-                }
         }
+
+        metadata_startup_script = "${file("ansible.sh")}"
+}
 
 resource "google_compute_firewall" "default" {
   name    = "test-firewall"
