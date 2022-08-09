@@ -1,0 +1,17 @@
+- name: ec2 launcher
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: launching ec2
+    ec2:
+      instance_type: t2.micro
+      key_name: kluczaws
+      image: ami-0c956e207f9d113d5
+      region: eu-central-1
+      group: default
+      count: 1
+      vpc_subnet_id: subnet-05124973ef5b5c979
+      wait: yes
+      assign_public_ip: yes
+      aws_access_key: AKIASWK5CS4EQVFPW4VG
+      aws_secret_key: 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
