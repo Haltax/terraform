@@ -8,7 +8,7 @@ terraform {
 
 resource "google_compute_instance" "default" {
         count        = "${var.vm_count}"
-        name         = "terra-zadanie-${count.index"
+        name         = "terra-zadanie-${count.index}"
         machine_type = "e2-medium"
         zone         = "${var.region}"
 
